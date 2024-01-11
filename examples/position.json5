@@ -1,5 +1,5 @@
 {
-  outPath: './position.mp4',
+  outPath: './output/position.mp4',
   defaults: {
     layerType: {
       'image-overlay': { width: 0.1 },

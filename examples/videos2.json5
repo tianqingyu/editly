@@ -1,7 +1,7 @@
 {
   // verbose: true,
   // enableFfmpegLog: true,
-  outPath: './video2.mp4',
+  outPath: './output/video2.mp4',
   defaults: {
     transition: {
       name: 'linearblur',

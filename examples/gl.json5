@@ -1,5 +1,5 @@
 {
-  outPath: './gl.mp4',
+  outPath: './output/gl.mp4',
   clips: [
     { transition: null, duration: 3, layers: [{ type: 'gl', fragmentPath: './assets/shaders/3l23Rh.frag' }] },
     { duration: 3, layers: [{ type: 'gl', fragmentPath: './assets/shaders/MdXyzX.frag' }] },

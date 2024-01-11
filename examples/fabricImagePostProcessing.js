@@ -3,7 +3,7 @@ import editly from '..';
 // See https://github.com/mifi/editly/pull/222
 
 editly({
-  outPath: './fabricImagePostProcessing.mp4',
+  outPath: './output/fabricImagePostProcessing.mp4',
   clips: [{
     duration: 4,
     layers: [

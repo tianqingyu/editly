@@ -1,6 +1,6 @@
 {
   fast: true,
-  outPath: './transitionEasing.mp4',
+  outPath: './output/transitionEasing.mp4',
   defaults: {
     duration: 2,
   },

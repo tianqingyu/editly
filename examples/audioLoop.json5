@@ -1,5 +1,5 @@
 {
-  outPath: './audioLoop.mp4',
+  outPath: './output/audioLoop.mp4',
   width: 200, height: 200,
   audioFilePath: './assets/winxp.mp3',
   loopAudio: true,

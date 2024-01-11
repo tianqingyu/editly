@@ -1,5 +1,5 @@
 {
-  outPath: './audio3.mp4',
+  outPath: './output/audio3.mp4',
   width: 200, height: 200,
   defaults: {
     layer: { fontPath: './assets/Patua_One/PatuaOne-Regular.ttf' },

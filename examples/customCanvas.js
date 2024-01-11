@@ -25,8 +25,8 @@ async function func({ canvas }) {
 
 editly({
   // fast: true,
-  // outPath: './customCanvas.mp4',
-  outPath: './customCanvas.gif',
+  // outPath: './output/customCanvas.mp4',
+  outPath: './output/customCanvas.gif',
   clips: [
     { duration: 2,
       layers: [

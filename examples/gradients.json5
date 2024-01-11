@@ -1,5 +1,5 @@
 {
-  outPath: './gradients.mp4',
+  outPath: './output/gradients.mp4',
   defaults: {
     transition: { name: 'linearblur', duration: 0.1 },
   },

@@ -1,6 +1,6 @@
 {
   // fast: false,
-  outPath: './losslesscut.mp4',
+  outPath: './output/losslesscut.mp4',
   // verbose: true,
   // enableFfmpegLog: true,
   fps: 30,

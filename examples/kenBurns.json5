@@ -1,5 +1,5 @@
 {
-  outPath: './kenBurns.mp4',
+  outPath: './output/kenBurns.mp4',
   defaults: {
     transition: { name: 'fade' },
   },

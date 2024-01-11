@@ -1,6 +1,6 @@
 {
   // enableFfmpegLog: true,
-  outPath: './audio-transition.mp4',
+  outPath: './output/audio-transition.mp4',
   keepSourceAudio: true,
   defaults: {
     duration: 3,

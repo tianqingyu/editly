@@ -1,5 +1,5 @@
 {
-  outPath: './audio-volume.mp4',
+  outPath: './output/audio-volume.mp4',
   width: 200, height: 200,
   clips: [
     { duration: 2, layers: [{ type: 'title-background', text: 'Audio output volume' }] },

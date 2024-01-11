@@ -1,5 +1,5 @@
 {
-  outPath: './imageOverlay.mp4',
+  outPath: './output/imageOverlay.mp4',
   clips: [
     { layers: [
       { type: 'video', path: './assets/changi.mp4', cutTo: 2 },

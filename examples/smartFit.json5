@@ -1,6 +1,6 @@
 {
   // enableFfmpegLog: true,
-  outPath: './smartFit.mp4',
+  outPath: './output/smartFit.mp4',
   defaults: {
     transition: null,
     layer: { backgroundColor: 'white' },

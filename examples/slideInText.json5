@@ -1,5 +1,5 @@
 {
-  outPath: './slideInText.mp4',
+  outPath: './output/slideInText.mp4',
   defaults: {
     layer: { fontPath: './assets/Patua_One/PatuaOne-Regular.ttf' },
   },

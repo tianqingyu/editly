@@ -1,5 +1,5 @@
 {
-  outPath: './customOutputArgs.webp',
+  outPath: './output/customOutputArgs.webp',
   clips: [
     { duration: 2, layers: [{ type: 'title-background', text: 'Custom output args' }] },
   ],

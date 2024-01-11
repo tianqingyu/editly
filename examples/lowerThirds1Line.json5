@@ -1,7 +1,7 @@
 {
   width: 1280,
   height: 720,
-  outPath: './lowerThirds1Line.mp4',
+  outPath: './output/lowerThirds1Line.mp4',
   clips: [
     { duration: 7, layers: [
       { type: 'fill-color', color: '#555' },

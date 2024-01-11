@@ -1,5 +1,5 @@
 {
-  outPath: './remote.mp4',
+  outPath: './output/remote.mp4',
   allowRemoteRequests: true,
   audioFilePath: './assets/High [NCS Release] - JPB  (No Copyright Music)-R8ZRCXy5vhA.m4a',
   clips: [
