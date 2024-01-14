@@ -30,7 +30,7 @@
     "meow": "^10.1.5",
     "nanoid": "^4.0.2",
     "ndarray": "^1.0.19",
-    "p-map": "^5.5.0"
+    "p-map": "^7.0.1"
   },
   "scripts": {
     "test": "node test.js",

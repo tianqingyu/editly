@@ -1,11 +1,14 @@
-{
-  // width: 2166, height: 1650,
-  width: 1024,
-  height: 576,
+import editly from '../index.js';
+
+editly({
+  // fast: true,
+  // width: 2166, height: 1650, fps: 30,
+  width: 720,
+  height: 1280,
   fps: 30,
   outPath: './output/myTest1.mp4',
   defaults: {
-    transition: { name: 'directional-left' },
+    transition: { name: 'random' },
     layer: { fontPath: './assets/Patua_One/PatuaOne-Regular.ttf' },
   },
   clips: [
@@ -30,11 +33,11 @@
     // { duration: 3, layers: [{ type: 'gl', fragmentPath: './assets/shaders/30daysofshade_010.frag' }] },
     // { duration: 3, layers: [{ type: 'gl', fragmentPath: './assets/shaders/wd2yDm.frag', speed: 5 }] },
 
-    // { duration: 3, layers: [
-    //   { type: 'image', path: './assets/91083241_573589476840991_4224678072281051330_n.jpg' },
-    //   { type: 'news-title', text: 'BREAKING NEWS' },
-    //   { type: 'subtitle', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', color: 'blue', backgroundColor: 'transparent' }
-    // ] },
+    { duration: 3, layers: [
+      { type: 'image', path: './assets/91083241_573589476840991_4224678072281051330_n.jpg' },
+      { type: 'news-title', text: 'BREAKING NEWS' },
+      { type: 'subtitle', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', color: 'blue', backgroundColor: 'transparent' }
+    ] },
 
     // { duration: 3, layers: [
     //   { type: 'rainbow-colors' },
@@ -43,12 +46,5 @@
     // ] },
 
     // { duration: 3, layers: [{ type: 'editly-banner' }] },
-
-    // { duration: 3, layers: [{ type: 'image', path: './input/2.png', resizeMode: 'cover', zoomDirection: 'left' }] },
-    {duration: 3, layers: [
-      { type: 'slide-in-text', fontSize: 1, text: '收到hi两个看来是啊哈多少个接收到感觉开始的', position: 'center' },
-      // { type: 'image-overlay', path: './input/1.png', position: {x: 0, y: 0.75, originX: 0.5, originY: 0.5}, width: 1, height: 1 },
-    ]},
-    // { duration: 3, layers: [{ type: 'video', path: './input/v2.mp4' }] },
   ],
-}
+});
