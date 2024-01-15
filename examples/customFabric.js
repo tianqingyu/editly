@@ -1,7 +1,6 @@
 import editly from '../index.js';
 
 /* eslint-disable spaced-comment,no-param-reassign */
-
 async function func({ width, height, fabric }) {
   async function onRender(progress, canvas) {
     canvas.backgroundColor = 'hsl(33, 100%, 50%)';
@@ -27,9 +26,7 @@ async function func({ width, height, fabric }) {
 }
 
 editly({
-  // fast: true,
-  outPath: './output/customFabric.gif',
-  // outPath: './output/customFabric.mp4',
+  outPath: './output/customFabric.mp4',
   clips: [
     { duration: 2, layers: [{ type: 'fabric', func }] },
   ],
