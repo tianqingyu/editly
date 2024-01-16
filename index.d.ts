@@ -1130,6 +1130,10 @@ declare namespace Editly {
 		 */
 		keepTmp?: boolean;
 
+    /**
+     * @param progress 取值：0 - 100
+     */
+    onProgress: (progress: number) => void,
 	}
 
 	interface RenderSingleFrameConfig extends Config {

@@ -41,6 +41,8 @@ async function Editly(config = {}) {
     outputVolume,
     customOutputArgs,
 
+    onProgress,
+
     ffmpegPath = 'ffmpeg',
     ffprobePath = 'ffprobe',
   } = config;
@@ -161,6 +163,7 @@ async function Editly(config = {}) {
   assert(fps, 'FPS not specified or detected');
 
   console.log(`${width}x${height} ${fps}fps`);
+  console.time('editly.elapsed');
 
   const estimatedTotalFrames = fps * clips.reduce((acc, c, i) => {
     let newAcc = acc + c.duration;
@@ -290,7 +293,10 @@ async function Editly(config = {}) {
 
         if (!verbose) {
           const percentDone = Math.floor(100 * (totalFramesWritten / estimatedTotalFrames));
-          if (totalFramesWritten % 10 === 0) process.stdout.write(`${String(percentDone).padStart(3, ' ')}% `);
+          if (totalFramesWritten % 10 === 0) {
+            process.stdout.write(`${String(percentDone).padStart(3, ' ')}% `);
+            if (onProgress) onProgress(percentDone);
+          }
         }
 
         // console.log({ transitionFrameAt, transitionNumFramesSafe })
@@ -395,6 +401,8 @@ async function Editly(config = {}) {
     if (!keepTmp) await fsExtra.remove(tmpDir);
   }
 
+  onProgress(100);
+  console.timeEnd('editly.elapsed');
   console.log();
   console.log('Done. Output file can be found at:');
   console.log(outPath);
