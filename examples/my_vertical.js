@@ -3,9 +3,8 @@ import editly from '../index.js';
 import { getZoomPanEffect } from '../zoompan/zoompan.js';
 
 // TODO test data
-const resolution = 'hd';
-const aspectRatio = '16:9';
-// const aspectRatio = '9:16';
+const resolution = 'bd';
+const aspectRatio = '9:16';
 const videos = [
   {
     wavUrl: './input/1.wav',
@@ -29,7 +28,7 @@ const videos = [
     wavUrl: './input/3.wav',
     srtTexts: '1\n00:00:00,000 --> 00:00:02,712\n我来那就不是真正的你了\n\n',
     mediaUrls: [
-      './input/1.png',
+      './input/3.png',
     ],
     effectName: 'pan-left',
     wavDuration: 2.712,
@@ -38,43 +37,30 @@ const videos = [
     wavUrl: './input/4.wav',
     srtTexts: '1\n00:00:00,000 --> 00:00:02,088\n屿桐淡淡地开口\n\n',
     mediaUrls: [
-      './input/2.png',
+      './input/4.png',
     ],
     effectName: 'pan-right',
     wavDuration: 2.088,
-  },
-  {
-    wavUrl: './input/5.wav',
-    srtTexts: '1\n00:00:00,000 --> 00:00:01,992\n他说他不想说话\n\n',
-    mediaUrls: [
-      './input/1.png',
-    ],
-    effectName: 'pan-up',
-    wavDuration: 1.992,
-  },
-  {
-    wavUrl: './input/6.wav',
-    srtTexts: '1\n00:00:00,000 --> 00:00:02,232\n龙空空急忙开口\n\n',
-    mediaUrls: [
-      './input/2.png',
-    ],
-    effectName: 'pan-down',
-    wavDuration: 2.232,
   },
 ];
 // END
 
 const resolutions = {
   // 高清，720p
-  'hd_16:9': [1280, 720, 36],
-  'hd_9:16': [720, 1280, 36],
+  'hd_16:9': [1280, 720, 32],
+  'hd_9:16': [720, 1280, 32],
   // 超清，1080p
-  'bd_16:9': [1920, 1080, 56],
-  'bd_9:16': [1080, 1920, 56],
+  'bd_16:9': [1920, 1080, 52],
+  'bd_9:16': [1080, 1920, 52],
   // 2k
-  '2k_16:9': [2560, 1440, 76],
-  '2k_9:16': [1440, 2560, 76],
+  '2k_16:9': [2560, 1440, 72],
+  '2k_9:16': [1440, 2560, 72],
+  // 4k
+  '4k_16:9': [3840, 2160, 92],
+  '4k_9:16': [2160, 3840, 92],
 };
+
+const transitions = ['fade', 'Radial', 'angular', 'ripple'];
 
 const resCconfig = resolutions[`${resolution}_${aspectRatio}`];
 
@@ -82,7 +68,13 @@ editly({
   width: resCconfig[0],
   height: resCconfig[1],
   fps: 30,
-  outPath: './output/myTest2.mp4',
+  outPath: './output/vertical_video.mp4',
+  defaults: {
+    transition: {
+      name: transitions[0],
+      duration: 0.25,
+    },
+  },
   clips: videos.map((video) => ({
     duration: video.wavDuration,
     layers: [

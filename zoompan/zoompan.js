@@ -17,7 +17,7 @@ function resizeForCoverMode(canvas, img) {
     imgW = rate >= 1 ? img.width * rate : img.width / rate;
     imgH = rate >= 1 ? img.height * rate : img.height / rate;
   }
-  return [imgW, imgH];
+  return { imgW, imgH };
 }
 
 /** 获取当前播放时间对应的字幕内容 */
@@ -89,7 +89,7 @@ function zoomIn({ srtTexts, mediaUrls, wavDuration, fontSize }) {
       imgs[i] ??= await loadImage(mediaUrls[i]);
       const img = imgs[i];
 
-      const [imgW, imgH] = resizeForCoverMode(canvas, img);
+      const { imgW, imgH } = resizeForCoverMode(canvas, img);
       const zoom = 1 + 0.3 * progress;
       const imgX = (canvas.width - imgW * zoom) / 2;
       const imgY = (canvas.height - imgH * zoom) / 2;
@@ -119,7 +119,7 @@ function zoomOut({ srtTexts, mediaUrls, wavDuration, fontSize }) {
       imgs[i] ??= await loadImage(mediaUrls[i]);
       const img = imgs[i];
 
-      const [imgW, imgH] = resizeForCoverMode(canvas, img);
+      const { imgW, imgH } = resizeForCoverMode(canvas, img);
       const zoom = 1.3 - 0.3 * progress;
       const imgX = (canvas.width - imgW * zoom) / 2;
       const imgY = (canvas.height - imgH * zoom) / 2;
@@ -149,7 +149,8 @@ function panRight({ srtTexts, mediaUrls, wavDuration, fontSize }) {
       imgs[i] ??= await loadImage(mediaUrls[i]);
       const img = imgs[i];
 
-      const centerX = (canvas.width - img.width) / 2;
+      const { imgW } = resizeForCoverMode(canvas, img);
+      const centerX = (canvas.width - imgW) / 2;
       const offset = Math.abs(centerX) * 0.5;
       const imgX = centerX + offset - offset * 2 * progress;
       ctx.drawImage(img, imgX, 0, canvas.height, canvas.height);
@@ -178,7 +179,8 @@ function panLeft({ srtTexts, mediaUrls, wavDuration, fontSize }) {
       imgs[i] ??= await loadImage(mediaUrls[i]);
       const img = imgs[i];
 
-      const centerX = (canvas.width - img.width) / 2;
+      const { imgW } = resizeForCoverMode(canvas, img);
+      const centerX = (canvas.width - imgW) / 2;
       const offset = Math.abs(centerX) * 0.5;
       const imgX = centerX - offset + offset * 2 * progress;
       ctx.drawImage(img, imgX, 0, canvas.height, canvas.height);
@@ -207,7 +209,8 @@ function panUp({ srtTexts, mediaUrls, wavDuration, fontSize }) {
       imgs[i] ??= await loadImage(mediaUrls[i]);
       const img = imgs[i];
 
-      const centerY = (canvas.height - img.height) / 2;
+      const { imgH } = resizeForCoverMode(canvas, img);
+      const centerY = (canvas.height - imgH) / 2;
       const offset = Math.abs(centerY) * 0.5;
       const imgY = centerY - offset + offset * 2 * progress;
       ctx.drawImage(img, 0, imgY, canvas.width, canvas.width);
@@ -236,7 +239,8 @@ function panDown({ srtTexts, mediaUrls, wavDuration, fontSize }) {
       imgs[i] ??= await loadImage(mediaUrls[i]);
       const img = imgs[i];
 
-      const centerY = (canvas.height - img.height) / 2;
+      const { imgH } = resizeForCoverMode(canvas, img);
+      const centerY = (canvas.height - imgH) / 2;
       const offset = Math.abs(centerY) * 0.5;
       const imgY = centerY + offset - offset * 2 * progress;
       ctx.drawImage(img, 0, imgY, canvas.width, canvas.width);
