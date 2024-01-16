@@ -45,6 +45,7 @@ const videos = [
 ];
 // END
 
+/** 分辨率 */
 const resolutions = {
   // 高清，720p
   'hd_16:9': [1280, 720, 32],
@@ -60,10 +61,10 @@ const resolutions = {
   '4k_9:16': [2160, 3840, 92],
 };
 
+/** 转场效果 */
 const transitions = ['fade', 'Radial', 'angular', 'ripple'];
 
 const resCconfig = resolutions[`${resolution}_${aspectRatio}`];
-
 editly({
   width: resCconfig[0],
   height: resCconfig[1],
