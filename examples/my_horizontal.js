@@ -1,6 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import editly from '../index.js';
-import { getZoomPanEffect } from '../zoompan/zoompan.js';
+import { editly, getZoomPanEffect } from '../index.js';
 
 // TODO test data
 const resolution = 'bd';
