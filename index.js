@@ -13,6 +13,8 @@ import parseConfig from './parseConfig.js';
 import GlTransitions from './glTransitions.js';
 import Audio from './audio.js';
 
+import { getZoomPanEffect } from './zoompan/zoompan.js';
+
 const channels = 4;
 
 async function Editly(config = {}) {
@@ -450,5 +452,6 @@ async function renderSingleFrame({
 }
 
 Editly.renderSingleFrame = renderSingleFrame;
+Editly.getZoomPanEffect = getZoomPanEffect;
 
 export default Editly;

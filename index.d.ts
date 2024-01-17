@@ -758,6 +758,7 @@ declare namespace Editly {
 	}
 
 	type CustomCanvasFunction = (args: CustomCanvasFunctionArgs) => OptionalPromise<CustomFunctionCallbacks>;
+  type InVideo = { srtTexts: string, mediaUrls: string[], wavDuration: number };
 
 	interface CanvasLayer extends BaseLayer {
 
@@ -1157,6 +1158,11 @@ declare namespace Editly {
 	 * @param config - Config.
 	 */
 	function renderSingleFrame(config: RenderSingleFrameConfig): Promise<void>;
+
+  /**
+   * 获取缩放、平移效果函数
+   */
+  function getZoomPanEffect(video: InVideo, fontSize: number): CustomCanvasFunction;
 }
 
 export = Editly;
