@@ -34,7 +34,8 @@
   },
   "scripts": {
     "test": "node test.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "demo": "xvfb-run -s \"-ac -screen 0 1280x1024x24\" node ./examples/my_vertical.js"
   },
   "repository": {
     "type": "git",
