@@ -83,6 +83,7 @@ editly({
       { type: 'canvas', func: getZoomPanEffect(video, resCconfig[2]) },
     ],
   })),
+  keepTmp: false,
   loopAudio: true,
   keepSourceAudio: true,
   onProgress: (p) => {
