@@ -451,7 +451,5 @@ async function renderSingleFrame({
   await frameSource.close();
 }
 
-Editly.renderSingleFrame = renderSingleFrame;
-Editly.getZoomPanEffect = getZoomPanEffect;
-
+export { Editly as editly, renderSingleFrame, getZoomPanEffect };
 export default Editly;

@@ -1150,19 +1150,20 @@ declare namespace Editly {
 		time?: number;
 
 	}
-
-	/**
-	 * WARNING: Undocumented feature!
-	 * Pure function to get a frame at a certain time.
-	 *
-	 * @param config - Config.
-	 */
-	function renderSingleFrame(config: RenderSingleFrameConfig): Promise<void>;
-
-  /**
-   * 获取缩放、平移效果函数
-   */
-  function getZoomPanEffect(video: InVideo, fontSize: number): CustomCanvasFunction;
 }
 
-export = Editly;
+/**
+ * WARNING: Undocumented feature!
+ * Pure function to get a frame at a certain time.
+ *
+ * @param config - Config.
+ */
+declare function renderSingleFrame(config: Editly.RenderSingleFrameConfig): Promise<void>;
+
+/**
+ * 获取缩放、平移效果函数
+ */
+declare function getZoomPanEffect(video: Editly.InVideo, fontSize: number): Editly.CustomCanvasFunction;
+
+export { Editly as editly, getZoomPanEffect, renderSingleFrame };
+export default Editly;
