@@ -165,7 +165,7 @@ async function Editly(config = {}) {
   assert(fps, 'FPS not specified or detected');
 
   console.log(`${width}x${height} ${fps}fps`);
-  console.time('editly.elapsed');
+  console.time(`${outPath}_elapsed`);
 
   const estimatedTotalFrames = fps * clips.reduce((acc, c, i) => {
     let newAcc = acc + c.duration;
@@ -404,7 +404,7 @@ async function Editly(config = {}) {
   }
 
   onProgress(100);
-  console.timeEnd('editly.elapsed');
+  console.timeEnd(`${outPath}_elapsed`);
   console.log();
   console.log('Done. Output file can be found at:');
   console.log(outPath);
