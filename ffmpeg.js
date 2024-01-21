@@ -26,6 +26,6 @@ export async function testFf(exePath, name) {
     console.log(`${name} version ${versionStr}`);
     assert(compareVersions(versionStr, minRequiredVersion, '>='), 'Version is outdated');
   } catch (err) {
-    console.error(`WARNING: ${name}:`, err.message);
+    console.error(`WARNING: ${name}:`, err);
   }
 }

@@ -87,7 +87,7 @@ const cli = meow(`
 
       const fileType = await fileTypeFromFile(clip);
       if (!fileType) {
-        console.error('Invalid file for clip', clip);
+        console.error('Invalid file for clip', clip, new Error());
         cli.showHelp();
       }
 
